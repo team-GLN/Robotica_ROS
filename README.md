@@ -7,4 +7,8 @@ Desarrollado por:
 * Goiatz Ezpeleta
 * Laura Zambrano
 
-## CONTENIDO
+### Contenido
+### Introducción
+
+El ejercicio a programar consiste en la aplicación típica de PICK&PLACE. Sin embargo, previamente se han tenido que llevar a cabo los siguientes procedimientos para poder realizar los ejercicio:
+
