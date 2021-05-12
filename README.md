@@ -9,10 +9,10 @@ Desarrollado por:
 
 
 ### Contenido
-- [Introducción]
-- [Ejercicio 1](https://github.com/team-GLN/Robotica_UR/blob/UR/README.md#ejercicio-3)
-- [Ejercicio 2](https://github.com/team-GLN/Robotica_UR/blob/UR/README.md#ejercicio-3)
-- [Ejercicio 3](https://github.com/team-GLN/Robotica_UR/blob/UR/README.md#ejercicio-3)
+- [Introducción](https://github.com/team-GLN/Robotica_ROS/blob/main/README.md#introduccion)
+- [Ejercicio 1](https://github.com/team-GLN/Robotica_ROS/blob/main/README.md#ejercicio-1)
+- [Ejercicio 2](https://github.com/team-GLN/Robotica_ROS/blob/UR/README.md#ejercicio-3)
+- [Ejercicio 3](https://github.com/team-GLN/Robotica_ROS/blob/UR/README.md#ejercicio-3)
 
 ### Introducción
 
