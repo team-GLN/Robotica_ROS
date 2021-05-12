@@ -4,8 +4,9 @@
 
 Desarrollado por:
 * Nekane Berasategui
-* Goiatz Ezpeleta
 * Laura Zambrano
+* Goiatz Ezpeleta
+
 
 ### Contenido
 ### Introducción
