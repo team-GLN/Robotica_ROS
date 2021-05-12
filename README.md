@@ -28,7 +28,8 @@ Una vez se ha tenido esto en cuenta, es posible comenzar con los ejercicios.
 
 ### Ejercicio 1
 Se dispone de dos mesas para comenzar con los ejercicios. Es necesario definir una posición segura en espacio de joints: 
-* *Safe Point:[-pi/4, -pi/2, 0, , -3*pi/4, pi/2, 0]
+ *Safe Point:[-pi/4, -pi/2, 0, , -3*pi/4, pi/2, 0]
+
 El ciclo pick&place que se propone es el siguiente: 
 1. El robot vaya a la posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
 2. El robot vaya a la posición XYZ [500, 250, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
