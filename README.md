@@ -16,7 +16,7 @@ Desarrollado por:
 
 ### Introducción
 
-El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE. Sin embargo, previamente se han tenido que preparar y tener en cuenta las diferentes fases para poder realizar los ejercicios:
+El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE. Sin embargo, previamente se han tenido que preparar y tener en cuenta las diferentes fases que se analizarán a continuación para poder realizar los ejercicios:
 
 Primeramente se ha instalado el simulador de UR Gazebo a traves del paquete de ROS *sudo apt-get install ros-kinetic-universal-robot.* A la hora de hacer los ejercicios, se lanza este simulador así como el planificador MoveIt!; el cual sirve para planificar y ejecutar trayectorias en espacio cartesiano. Consiste en un conjunto de paquetes. Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario tener instalado el paquete *moveit_commander* porque ofrece una interfaz de Python. El siguiente paso es genera un nuevo paquete para obtener el script, *rospy*.
 
@@ -24,9 +24,10 @@ Como planificador de trayectorias también se puede utilizar el visualizador RVi
 
 Los movimientos del ejercicio se programan en un nodo de ROS. Un nodo es la unidad ejecutable de ROS, comunica los dos entre sí. La comunicación se da atraves de dos nodos, el *Publisher* y el *Subscriber*. Y los buses en los cuales los nodos intercambian mensajes son *Topics*. Siempre tiene que estar lanzado el Máster (*roscore*).
 
-
+Una vez se ha tenido esto en cuenta, es posible comenzar con los ejercicios.
 
 ### Ejercicio 1
+Se dispone de dos mesas para comenzar con los ejercicios. También es necesario definir una posición segura en espacio de joints: 
 
 ### Ejercicio 2
 
