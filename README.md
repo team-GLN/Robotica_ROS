@@ -28,6 +28,7 @@ Una vez se ha tenido esto en cuenta, es posible comenzar con los ejercicios.
 
 ### Ejercicio 1
 Se dispone de dos mesas para comenzar con los ejercicios. También es necesario definir una posición segura en espacio de joints: 
+* *Safe Point:[0, -pi/4, -pi/2, -3*pi/4, pi/2, 0]
 
 ### Ejercicio 2
 
