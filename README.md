@@ -41,6 +41,14 @@ El ciclo pick&place que se propone es el siguiente:
 
 ### Ejercicio 2
 
+En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid. 
+
+Pose de inicio:
+Tamaño de la rejilla:
+Distancia horizontal de la rejilla:
+Distancia vertical de la rejilla:
+
+
 ### Ejercicio 3
 
 
