@@ -37,17 +37,18 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 
 #### *El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE, en el que un robot coge un objeto de un punto fijo y lo deposita en otro.* 
 
-Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URPF.
+* Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URPF.
 
-Es necesario definir una posición segura en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º]
- 
- *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
+*Es necesario declarar una posición segura de inicio y final de programa en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º] *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
 
-El ciclo pick&place que se propone es el siguiente: 
+* El ciclo pick&place en posiciones cartersianas que se propone es el siguiente: 
 1. Posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
-2. Posición XYZ [500, 250, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
+2. 1. Posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
 3. El robot vuelva a la posición segura.
 
+El robot se desplaza a la posición previa al pick (1). A continuación baja a la posición del pick y espera 1 segundo para recoger la pieza. Luego sube otra vez a la posición de superior al pick. Se desplaza otra vez a la posición previa al place, baja a la posición y suelta la pieza y espera un segundo (2). Finalmente el robot vuelve a la posición segura.
+
+* La velocidad y aceleración en todos los movimientos es de 1 m/s y m/s2.
 
 
 ### Ejercicio 2
@@ -60,11 +61,11 @@ Posiciones de la bandeja:
 * filas: 3
 * columnas: 3
 
-Distancia horizontal de la rejilla: 0.01
+Distancia horizontal de la rejilla: 0.05
 
-Distancia vertical de la rejilla: 0.01
+Distancia vertical de la rejilla: 0.05
 
-Antes del desbarbado, el robot debera ir a una posición 50mm por encima de la pose de desbarbado.
+Antes de comenzar el ciclo de pick&place, el robot debera ir a una posición 50mm por encima de la pose de inicio.
 
 ### Ejercicio 3
 
