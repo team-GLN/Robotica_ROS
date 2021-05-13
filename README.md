@@ -66,9 +66,9 @@ Tamaño de la rejilla:
 * filas: 2
 * columnas: 3
 
-Distancia horizontal de la rejilla:0.01
+Distancia horizontal de la rejilla: 0.01
 
-Distancia vertical de la rejilla:0.01
+Distancia vertical de la rejilla: 0.01
 
 Antes del desbarbado, el robot debera ir a una posición 50mm por encima de la pose de desbarbado.
 
