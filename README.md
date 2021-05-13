@@ -21,7 +21,9 @@ ROS es un software de programación de robots que es compatible con la mayoría 
 Se van a analizar y programar diferentes ejercicios de situaciones típicas que se encuentran en la industria. Sin embargo, previamente se han tenido que preparar y tener en cuenta las diferentes fases que se analizarán a continuación para poder realizar los ejercicios:
 
 
-### Ejercicio 1Primeramente se ha creado un nuevo workspace *ros*. A continuación se crea un paquete *src.
+### Ejercicio 1
+
+Primeramente se ha creado un nuevo workspace *ros*. A continuación se crea un paquete *src.
 
 Es necesario instalar el simulador de UR Gazebo para hacer el cálculo de geometria a traves del paquete de ROS ```sudo apt-get install ros-kinetic-universal-robot```. A la hora de hacer los ejercicios, se lanza este simulador con ```roslaunch ur_gazebo ur5.launch``` así como el planificador MoveIt! (es en un conjunto de paquetes); el cual sirve para planificar y ejecutar trayectorias en espacio cartesiano con ```roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true```. Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario tener instalado el paquete *moveit_commander* porque ofrece una interfaz de Python. El siguiente paso a seguir es generar un nuevo paquete para obtener el script, *rospy*.
 
