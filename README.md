@@ -58,8 +58,8 @@ El ciclo pick&place que se propone es el siguiente:
 
 Pose de inicio:
 
-Tamaño de la rejilla:
-* filas: 2
+Posiciones de la bandeja:
+* filas: 3
 * columnas: 3
 
 Distancia horizontal de la rejilla: 0.01
