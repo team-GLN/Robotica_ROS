@@ -34,7 +34,7 @@ Una vez se ha tenido esto en cuenta, es posible comenzar con los ejercicios.
 
 ### Ejercicio 1
 
-El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE, en el que un robot coje un objeto de un punto fijo y lo deposita en otro.
+El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE, en el que un robot coge un objeto de un punto fijo y lo deposita en otro.
 Se dispone de dos mesas para comenzar con los ejercicios. Es necesario definir una posición segura en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º]
  
  *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
