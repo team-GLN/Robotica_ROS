@@ -62,7 +62,7 @@ El robot se mueve a la posición segura mediante movej ...### hay que confirmar 
 
 ### Ejercicio 2
 
-En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid. 
+#### En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid. 
 
 Pose de inicio:
 
