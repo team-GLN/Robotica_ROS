@@ -36,6 +36,7 @@ Una vez se ha tenido esto en cuenta, es posible comenzar con los ejercicios.
 
 El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE, en el que un robot coje un objeto de un punto fijo y lo deposita en otro.
 Se dispone de dos mesas para comenzar con los ejercicios. Es necesario definir una posición segura en espacio de joints: [0º, -45º, -90º, -135º, 90º, 0º]
+ 
  *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
 
 El ciclo pick&place que se propone es el siguiente: 
@@ -43,7 +44,16 @@ El ciclo pick&place que se propone es el siguiente:
 2. Posición XYZ [500, 250, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
 3. El robot vuelva a la posición segura.
 
-El código es el mismo que se ha empleado para el ejercicio de UR.
+Las variables que definen estas posiciones son las siguientes:
+
+#Declaracion de posiciones globales
+posPrePick = p[0.500, 0.000, 0.250, 0, pi, 0] #herramienta arriba en el punto de pick
+posPick = p[0.500, 0.000, 0.000, 0, pi, 0] #herramienta abajo en el punto de pick
+posPrePlace = p[0.500, 0.250, 0.250, 0, pi, 0]#herramienta arriba en el punto de place
+posPlace = p[0.500, 0.250, 0.000, 0, pi, 0]#herramienta abajo en el punto de place
+
+El robot se mueve a la posición segura mediante movej ...### hay que confirmar que sea como en el UR...
+
 
 
 ### Ejercicio 2
