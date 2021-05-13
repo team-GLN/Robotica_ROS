@@ -31,24 +31,35 @@ Una vez se ha tenido esto en cuenta, es posible comenzar con los ejercicios.
 ### Ejercicio 1
 
 El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE, en el que un robot coje un objeto de un punto fijo y lo deposita en otro.
-Se dispone de dos mesas para comenzar con los ejercicios. Es necesario definir una posición segura en espacio de joints: 
- *Safe Point:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
+Se dispone de dos mesas para comenzar con los ejercicios. Es necesario definir una posición segura en espacio de joints: [0º, -45º, -90º, -135º, 90º, 0º]
+ *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
 
 El ciclo pick&place que se propone es el siguiente: 
 1. Posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
 2. Posición XYZ [500, 250, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
 3. El robot vuelva a la posición segura.
 
+El código es el mismo que se ha empleado para el ejercicio de UR.
+
+
 ### Ejercicio 2
 
 En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid. 
 
 Pose de inicio:
-Tamaño de la rejilla:
-Distancia horizontal de la rejilla:
-Distancia vertical de la rejilla:
 
+Tamaño de la rejilla:
+* filas: 2
+* columnas: 3
+
+Distancia horizontal de la rejilla:0.01
+
+Distancia vertical de la rejilla:0.01
+
+Antes del desbarbado, el robot debera ir a una posición 50mm por encima de la pose de desbarbado.
 
 ### Ejercicio 3
 
+MoveIt! tiene en cuenta los elementos de la escena para asegurar que las trayectorias que se generan no tienen ninguna colisión con los elementos de la escena. Cogiendo como punto inicial del ejercicio anterior [0º, -45º, -90º, -135º, 90º, 0º], modifica la URDF para añadir obstáculos.
 
+Se han experimentado añadiendo distintos obstáculos y se ha analizado como se modifican las trayectorias.
