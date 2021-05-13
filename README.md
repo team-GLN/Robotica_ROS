@@ -38,7 +38,7 @@ Los movimientos del ejercicio se programan en un nodo de ROS. Un nodo es la unid
 
 Como planificador de trayectorias también se puede utilizar el visualizador de datos de Ros,RViz. Para interaccionar con MoveIt! Además de lanzar el visualizador es necesario lanzar también el plugin ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```. En RViz podemos ver que las trayectorias pueden generar colisiones. Esto es debido a que la escena del RViz tiene suelo y la de MoveIt! no. Esto hace que haya que modificar la escena. Para ello es necesario modificar el URDF (formato de lenguaje) para añadir una mesa. Se modifica la última parte *world_joint*. Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos.
 
-####*El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE, en el que un robot coge un objeto de un punto fijo y lo deposita en otro.*
+#### *El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE, en el que un robot coge un objeto de un punto fijo y lo deposita en otro.*
 Se dispone de dos mesas para comenzar con los ejercicios. Es necesario definir una posición segura en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º]
  
  *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
