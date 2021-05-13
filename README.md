@@ -51,10 +51,9 @@ posPrePick = p[0.500, 0.000, 0.250, 0, pi, 0] #herramienta arriba en el punto de
 posPick = p[0.500, 0.000, 0.000, 0, pi, 0] #herramienta abajo en el punto de pick
 posPrePlace = p[0.500, 0.250, 0.250, 0, pi, 0]#herramienta arriba en el punto de place
 posPlace = p[0.500, 0.250, 0.000, 0, pi, 0]#herramienta abajo en el punto de place
-```py
+```
 
 El robot se mueve a la posición segura mediante movej ...### hay que confirmar que sea como en el UR...
-
 
 
 ### Ejercicio 2
