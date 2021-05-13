@@ -72,4 +72,4 @@ Antes del desbarbado, el robot debera ir a una posición 50mm por encima de la p
 
 #### *MoveIt! tiene en cuenta los elementos de la escena para asegurar que las trayectorias que se generan no tienen ninguna colisión con los elementos de la escena. Cogiendo como punto inicial del ejercicio anterior [0º, -45º, -90º, -135º, 90º, 0º], modifica la URDF para añadir obstáculos.*
 
-Se han experimentado añadiendo distintos obstáculos y se ha analizado como se modifican las trayectorias.
+Se ha añadido un tercer obstáculo entre las dos mesas desplazando la segunda mesa. De tal manera que al robot le resulte más complicado alcanzar la segunda mesa. 
