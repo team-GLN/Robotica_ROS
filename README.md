@@ -43,7 +43,7 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 
 * El ciclo pick&place en posiciones cartersianas que se propone es el siguiente: 
 1. Posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
-2. 1. Posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
+2. Posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
 3. El robot vuelva a la posición segura.
 
 El robot se desplaza a la posición previa al pick (1). A continuación baja a la posición del pick y espera 1 segundo para recoger la pieza. Luego sube otra vez a la posición de superior al pick. Se desplaza otra vez a la posición previa al place, baja a la posición y suelta la pieza y espera un segundo (2). Finalmente el robot vuelve a la posición segura.
