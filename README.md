@@ -31,20 +31,36 @@ En primer lugar, se ha creado un nuevo workspace llamado *ros*. A continuación 
 
 Las acciones de ROS se programan mediante nodos, los cuales son la unidad ejecutable de ROS. Es el *Máster* el que supervisa la comunicación entre nodos. Es lo primero que se lanza y siempre tiene que estar lanzado (```roscore```). 
 
-Para visualizar estas modificaciones, se debe lanzar el simulador de UR Gazebo que el cálculo de geometria, a traves del comando ```roslaunch ur_gazebo ur5.launch```
+Para visualizar estas modificaciones, se debe lanzar el simulador de UR Gazebo que el cálculo de geometria, a traves del comando ```roslaunch ur_gazebo ur5.launch```. A su vez, cada vez que se ejecute un cambio se deben detener todos los terminales que se esten ejecuatando, y posteriormente compilar y refrescar la información nueva a traves de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
 
-A su vez, cada vez que se ejecute un cambio se deben detener todos los terminales que se esten ejecuatando, y posteriormente compilar y refrescar la información nueva a traves de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
+Es necesario instalar una serie de complementos, librerias, APIs, etc. para realizar el desarrollo del ejercicio. Por un lado, se ha bajado una copia del codigo fuente de Ros de Universal Robots en el workspace para modificar el URDF.
 
-Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario tener instalado el paquete *moveit_commander* porque ofrece una interfaz de Python. El siguiente paso a seguir es generar un nuevo archivo en blanco el cual contendra el script.
+Para ello, se ha modificado la parte *world_joint* del URDF para añadir dos mesas, una sobre la que esta el robot y realiza el pick y otra en perpendicular (en forma de L) donde se realiza el place.
 
-Como planificador de trayectorias también se puede utilizar el visualizador de datos de Ros, RViz. Para que RViz interaccione con MoveIt! además de lanzar el visualizador es necesario lanzar también el plugin ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```. En RViz podemos ver que las trayectorias pueden generar colisiones. Esto es debido a que la escena del RViz tiene suelo y la de MoveIt! no. Esto hace que haya que modificar la escena. Es necesario modificar la última parte *world_joint* del URDF (formato de lenguaje) para añadir una mesa. Sin embargo, durante esta fase de modificaciones, hay que detener todos los terminales y posteriormente activarlos a traves de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
+```
+<!-- MESA 2 -->
+<joint name="table_joint_2" type="fixed">
+    <parent link="world"/>
+    <child link="table_2"/>
+</joint>
+<link name="table_2">
+    <visual>
+    <origin xyz="0.5 1 0.37" rpy="0 0 0"/>
+    <geometry>
+        <box size="0.5 1.5 0.74"/>
+    </geometry>
+    </visual>
+<collision>
+    <origin xyz="0.5 1 0.37" rpy="0 0 0"/>
+    <geometry>
+    <box size="0.5 1.5 0.74"/>
+    </geometry>
+</collision>
+```
 
-Es necesario instalar una serie de complementos, librerias, APIs, etc. para realizar el desarrollo del ejercicio. Por un lado, se ha bajado una copia del codigo fuente de Ros de Universal Robots para modificar el URDF.
-
-Para ello, se ha modificado la parte *world_joint* del URDF para añadir dos mesas, una sobre la que esta el robot y realiza el pick y otra en perpendicular (en forma de L) donde se realiza el place. 
-Como se menciona anteriomente, para realizar los ejercicios de pick & place se configuraron dos mesas en forma de L,  para simular coger objetos y depositarlos. La primera mesa está situada en el origen y sus dimensiones son 1.5x0.5x0.74m. La segunda mesa está situada a 0.5m en X y 1m en Y y sus dimensiones son 0.5x1.5x0.74m.
+Como se menciona anteriomente, para realizar los ejercicios de pick & place se configuraron dos mesas en forma de L,  para simular coger objetos y depositarlos. La primera mesa está situada en el origen y sus dimensiones son 1.5x0.5x0.74m. La segunda mesa está situada a 0.5m en X y 1m en Y y sus dimensiones son 0.5x1.5x0.74m, tal como se observa en la siguiente foto.
     
-  <p align="center">
+ <p align="center">
     <img src = /Fotos/1.jpg width="350">
 </p>
 
@@ -61,7 +77,19 @@ Los valores en espacio de joints elegidos como posición segura se definen a con
 | wrist_2_joint     | -1.57        | 
 | wrist_3 joint     | 0.50         |
 
-Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario utilizar la libreria de *moveit_commander*. El siguiente paso a seguir es generar un nuevo archivo en blanco el cual contendrá el script en python. La logica que sigue el codigo es la siguiente:
+Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario importar la libreria de *moveit_commander*. 
+
+```py
+import rospy
+import moveit_commander
+import time
+from tf import transformations
+from geometry_msgs.msg import Pose
+```
+
+Tambien se ha importado la libreria Time para las esperas, mediante la linea ```time.sleep(T)```. En este caso se le ha dado un valor de 2.
+
+El siguiente paso a seguir es generar un nuevo archivo en blanco el cual contendrá el script en python. La logica que sigue el codigo es la siguiente:
 
 * Se desplaza a la posición Pick arriba: [0, 0, 1, -2.36, 1.57, 0]
 * Se desplaza a la posición Pick abajo:[0, 0, 0.85, -2.36, 1.57, 0]
@@ -74,7 +102,22 @@ Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaj
 
 Este ciclo pick & place se alcanzas las posiciones en espacios cartersianos definidos anteriormente. Ademas se a incluido dentro de un ciclo ```for``` donde se realizan N repeticiones, segun el valor que se le asigne a dicha variable (en este caso de 5). 
 
-Se ha importado la libreria Time y se define el tiempo de espera mediante la variable: time.sleep. En este caso se le ha dado un valor de 2.
+```py
+for i in range (rep):
+
+	print "PICK"
+	pick_arriba = [0, 0, 1,-2.36, 1.57, 0]
+	ur_group.set_pose_target(pick_arriba)
+	plan = ur_group.plan()
+	ur_group.execute( plan )
+
+	pick_abajo = [0, 0, 0.85,-2.36, 1.57, 0]
+	ur_group.set_pose_target(pick_abajo)
+	plan = ur_group.plan()
+	ur_group.execute( plan )
+
+	time.sleep(2)
+```
 
 Se aclara que, en este script se ha definido la posición segura en joints mediante el siguiente vector ```safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]```. Esta posición segura es alcanzada  al inicio y al final del programa en espacio de joints.
 
@@ -82,6 +125,8 @@ Para que el script de Python sea ejecutable, se dan permisos de ejecuciòn media
 Nuevamente se compila y refresca la información nueva a traves de ```catkin build``` y ```source devel/setup.bash```. 
 
 También se lanza el planificador MoveIt!, el cual sirve para planificar y ejecutar trayectorias en espacio cartesiano con ```roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true```. 
+
+Ademas, se utilizò RViz además de lanzar el visualizador es necesario lanzar también el plugin ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```. En RViz podemos ver que las trayectorias pueden generar colisiones. Esto es debido a que la escena del RViz tiene suelo y la de MoveIt! no. Esto hace que haya que modificar la escena. 
 
  Y a continuación se lanza el nodo creado con el comando ```rosrun ejercicio_1 script_1.py```
  
