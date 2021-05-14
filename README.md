@@ -79,7 +79,7 @@ Los valores en espacio de joints elegidos como posición segura se definen a con
 
 safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]
 
-Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario importar la libreria de *moveit_commander*. 
+Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario importar la librería de *moveit_commander*. 
 
 ```py
 import rospy
