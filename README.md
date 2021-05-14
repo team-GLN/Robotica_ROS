@@ -65,7 +65,7 @@ Además es necesario declarar una posición segura de inicio y final de programa
 
 * safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]
 
-El ciclo pick&place en posiciones cartersianas que se propone es el que se ve a continuación donde el valor de las repeticiones de ciclo N veces se le ha dado un valor de 5.
+El ciclo pick&place en posiciones cartersianas que se propone es el que se ve a continuación el cual se ha incluido dentro de un ciclo for donde a las repetiones  N  se le ha dado un valor de 5.
 * posición Pick arriba: [0, 0, 1, -2.36, 1.57, 0]
 * Posición Pick abajo:[0, 0, 0.85, -2.36, 1.57, 0]
 * Espera 2 segundos
@@ -73,7 +73,6 @@ El ciclo pick&place en posiciones cartersianas que se propone es el que se ve a 
 * Place arriba:[0.5, 0.7, 0.85, -2.36, 1.57, 0]
 * Place abajo:[0.5, 0.7, 1, -2.36, 1.57, 0]
 * Espera 2 segundos.
-
 
 
 
