@@ -38,7 +38,8 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 #### *El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE. En este caso, coge la pieza en una mesa y lo deposita en otra* 
 
 * Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URPF.
-```<!-- MESA 2 -->
+```
+<!-- MESA 2 -->
 <joint name="table_joint_2" type="fixed">
 <parent link="world"/>
 <child link="table_2"/>
