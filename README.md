@@ -31,15 +31,20 @@ En primer lugar, se ha creado un nuevo workspace llamado *ros*. A continuación 
 
 Las acciones en ROS se programan mediante nodos, la cual es la unidad ejecutable de ROS. Es el *Máster* el que supervisa la comunicación entre nodos. Es lo primero que se lanza y siempre tiene que estar lanzado (```roscore```). 
 
-A su vez, es necesario instalar una serie de complementos, librerias, APIs, etc. para realizar el desarrollo del ejercicio. Por un lado, se bajo una copia del codgio fuente del ros de universal robots para modificar el URDF.
+A su vez, es necesario instalar una serie de complementos, librerias, APIs, etc. para realizar el desarrollo del ejercicio. Por un lado, se ha bajado una copia del codigo fuente de Ros de Universal Robots para modificar el URDF.
 
-Para ello, se modifico la parte *world_joint* del URDF para añadir dos mesas, una sobre la que esta el robot y realiza el pick y otra en perpendicular (en forma de L) donde se realiza el place. 
+Para ello, se ha modificado la parte *world_joint* del URDF para añadir dos mesas, una sobre la que esta el robot y realiza el pick y otra en perpendicular (en forma de L) donde se realiza el place. 
 
 Para visualizar estas modificaciones, se debe lanzar el simulador de UR Gazebo que el cálculo de geometria, a traves del comando ```roslaunch ur_gazebo ur5.launch```
 
 A su vez, cada vez que se ejecute un cambio se deben detener todos los terminales que se esten ejecuatando, y posteriormente compilar y refrescar la información nueva a traves de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
 
-Como se menciono anteriomente, para realizar los ejercicios de pick & place se configuraron dos mesas en forma de L,  para simular coger objetos y depositarlos. La primera mesa está situada en el origen y sus dimensiones son 1.5x0.5x0.74m. La segunda mesa está situada a 0.5m en X y 1m en Y y sus dimensiones son 0.5x1.5x0.74m.
+Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario tener instalado el paquete *moveit_commander* porque ofrece una interfaz de Python. El siguiente paso a seguir es generar un nuevo archivo en blanco el cual contendra el script.
+
+Como planificador de trayectorias también se puede utilizar el visualizador de datos de Ros, RViz. Para que RViz interaccione con MoveIt! además de lanzar el visualizador es necesario lanzar también el plugin ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```. En RViz podemos ver que las trayectorias pueden generar colisiones. Esto es debido a que la escena del RViz tiene suelo y la de MoveIt! no. Esto hace que haya que modificar la escena. Es necesario modificar la última parte *world_joint* del URDF (formato de lenguaje) para añadir una mesa. Sin embargo, durante esta fase de modificaciones, hay que detener todos los terminales y posteriormente activarlos a traves de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
+
+
+Como se menciona anteriomente, para realizar los ejercicios de pick & place se configuraron dos mesas en forma de L,  para simular coger objetos y depositarlos. La primera mesa está situada en el origen y sus dimensiones son 1.5x0.5x0.74m. La segunda mesa está situada a 0.5m en X y 1m en Y y sus dimensiones son 0.5x1.5x0.74m.
     
   <p align="center">
     <img src = /Fotos/1.jpg width="350">
@@ -58,7 +63,7 @@ Los valores en espacio de joints elegidos como posición segura se definen a con
 | wrist_2_joint     | -1.57        | 
 | wrist_3 joint     | 0.50         |
 
-Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario tener utilizar la libreria de *moveit_commander*. El siguiente paso a seguir es generar un nuevo archivo en blanco el cual contendra el script en python. La logica que sigue el codigo es la siguiente 
+Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario utilizar la libreria de *moveit_commander*. El siguiente paso a seguir es generar un nuevo archivo en blanco el cual contendrá el script en python. La logica que sigue el codigo es la siguiente:
 
 * Se desplaza a la posición Pick arriba: [0, 0, 1, -2.36, 1.57, 0]
 * Se desplaza a la posición Pick abajo:[0, 0, 0.85, -2.36, 1.57, 0]
@@ -69,7 +74,7 @@ Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaj
 * Espera 2 segundos.
 * Vuelve a subir a la posición a Place arriba.
 
-Este ciclo pick & place se realiza alcanza las posiciones (en espacios cartersianos) definidos anteriormente. Ademas se a incluido dentro de un ciclo ```for``` donde se realizan N repeticiones, segun el valor que se le asigne a dicha variable (en este caso de 5).
+Este ciclo pick & place se alcanzas las posiciones en espacios cartersianos definidos anteriormente. Ademas se a incluido dentro de un ciclo ```for``` donde se realizan N repeticiones, segun el valor que se le asigne a dicha variable (en este caso de 5).
 
 Se aclara que, en este script se ha definido la posiciòn segura en joints mediante el siguiente vector ```safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]```. Esta posición segura es alcanzada  al inicio y final de programa en espacio de joints.
 
