@@ -38,6 +38,35 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 #### *El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE. En este caso, coge la pieza en una mesa y lo deposita en otra* 
 
 * Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URPF.
+```<!-- MESA 2 -->
+<joint name="table_joint_2" type="fixed">
+<parent link="world"/>
+<child link="table_2"/>
+</joint>
+<link name="table_2">
+<visual>
+<origin xyz="0.5 1 0.37" rpy="0 0 0"/>
+<geometry>
+<box size="0.5 1.5 0.74"/>
+</geometry>
+</visual>
+<collision>
+<origin xyz="0.5 1 0.37" rpy="0 0 0"/>
+<geometry>
+<box size="0.5 1.5 0.74"/>
+</geometry>
+</collision>
+<inertial>
+<mass value="10"/>
+<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+</inertial>
+</link>
+<gazebo reference="table_2">
+<material>Gazebo/DarkGrey</material>
+<mu1>2.0</mu1>
+<mu2>2.0</mu2>
+</gazebo>
+```
 
 * Es necesario declarar una posición segura de inicio y final de programa en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º] *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
 
