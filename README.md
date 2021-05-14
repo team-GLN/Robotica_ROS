@@ -25,8 +25,6 @@ Se van a analizar y programar diferentes ejercicios de situaciones típicas que 
 
 ### Ejercicio 1
 
-### Ejercicio 1
-
 El ejercicio a programar consiste en la aplicación roboticá común de PICK & PLACE. En este caso, se coge una pieza de una mesa y lo deposita en otra.
 
 En primer lugar, se ha creado un nuevo workspace llamado *ros*. A continuación se crea un paquete para el ejercicio 1 con el comando  ```catkin_create_pkg ejercicio_1 rospy``` dentro de la carpeta *src*.
@@ -80,7 +78,9 @@ Nuevamente se compila y refresca la información nueva a traves de ```catkin bui
 
 Al igual que se lanza el planificador MoveIt!, el cual sirve para planificar y ejecutar trayectorias en espacio cartesiano con ```roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true```. 
 
- Y luego se lanza el nodo creado con el comando ```rosrun ejercicio_1 script_1.py"### Ejercicio 2
+ Y luego se lanza el nodo creado con el comando ```rosrun ejercicio_1 script_1.py```
+ 
+### Ejercicio 2
 
 #### *En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid.*
 
