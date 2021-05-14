@@ -79,13 +79,13 @@ El ciclo pick&place en posiciones cartersianas que se propone es el que se ve a 
 
 for i in range (rep):
 	pick_arriba = [0, 0, 1,-2.36, 1.57, 0]
-    pick_abajo = [0, 0, 0.85,-2.36, 1.57, 0]
+        pick_abajo = [0, 0, 0.85,-2.36, 1.57, 0]
 	time.sleep(2)
 	pick_arriba = [0, 0, 1,-2.36, 1.57, 0]
 	place_arriba = [0.5, 0.7, 1,-2.36, 1.57, 0]
 	place_abajo = [0.5, 0.7, 0.85,-2.36, 1.57, 0]
 	time.sleep(2)
-    place_arriba = [0.5, 0.7, 1,-2.36, 1.57, 0] 
+        place_arriba = [0.5, 0.7, 1,-2.36, 1.57, 0] 
 ```   
 
 
