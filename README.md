@@ -65,12 +65,16 @@ Además es necesario declarar una posición segura de inicio y final de programa
 
 * safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]
 
-* El ciclo pick&place en posiciones cartersianas que se propone es el siguiente: 
-* posición Pick: [1.12, 0.025, 0.92, 0.534, 0.588, 0.488, 0.3588]
-* 
-El robot vaya a la posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
+El ciclo pick&place en posiciones cartersianas que se propone es el que se ve a continuación donde el valor de las repeticiones de ciclo N veces se le ha dado un valor de 5.
+* posición Pick arriba: [0, 0, 1, -2.36, 1.57, 0]
+* Posición Pick abajo:[0, 0, 0.85, -2.36, 1.57, 0]
+* Espera 2 segundos
+* Vuelve a subir. Pick arriba:[0, 0, 1, -2.36, 1.57, 0]
+* Place arriba:[0.5, 0.7, 0.85, -2.36, 1.57, 0]
+* Place abajo:[0.5, 0.7, 1, -2.36, 1.57, 0]
+* Espera 2 segundos.
 
-* La velocidad y aceleración en todos los movimientos es de 1 m/s y m/s2.
+
 
 
 ### Ejercicio 2
