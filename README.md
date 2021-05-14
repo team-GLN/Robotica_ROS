@@ -42,6 +42,7 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 * Es necesario declarar una posición segura de inicio y final de programa en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º] *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
 
 * El ciclo pick&place en posiciones cartersianas que se propone es el siguiente: 
+* 
 El robot vaya a la posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm hasta quedarse en Z=0, espere 1 segundo y vuelva a subir a la posición previa.
 
 * La velocidad y aceleración en todos los movimientos es de 1 m/s y m/s2.
@@ -57,8 +58,15 @@ El robot vaya a la posición XYZ [500, 0, 250] RxRyRz [0, 180, 0], baje 250mm ha
 * columnas: 3
 * Distancia horizontal de la rejilla: 0.05
 * Distancia vertical de la rejilla: 0.05
+* Antes de comenzar el ciclo de pick&place, el robot debera ir a una posición 50mm por encima de la pose de inicio.
+* Posición segura de inicio y final de programa en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º]
+* Movimiento de approach en espacio cartesiano
+* Bajar en Z para coger el objeto y subir en Z
+* Movimiento de approach a la primera posicion del grid
+* Bajar en Z para dejar el objeto y subir en Z
+* Mover de nuevo a la posición de cogida
 
-Antes de comenzar el ciclo de pick&place, el robot debera ir a una posición 50mm por encima de la pose de inicio.
+*Verificación de las posiciones
 
 ### Ejercicio 3
 
