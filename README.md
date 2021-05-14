@@ -71,7 +71,7 @@ Para realizar los ejercicios de pick&place, es necesario añadir una segunda mes
 </gazebo>
 ```
 
-Además necesario declarar una posición segura de inicio y final de programa en espacio de joints:
+Además es necesario declarar una posición segura de inicio y final de programa en espacio de joints:
 
 
 | Joints            | Valores      | 
