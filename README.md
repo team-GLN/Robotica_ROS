@@ -155,13 +155,54 @@ paso_vertical = 0.15
 ```
 También, se han agregado dos ciclos ```for``` para recorrer la rejilla, el primero da el paso por las columnas, manteniendo la fila constante, y después se incrementa el contador para pasar a la siguiente fila. Además de crear los dos contadores ```i``` y ```j``` que controlan el recorrido y se incrementan en cada paso.
 
+De modo que el nodo Python realizar los siguientes pasos:
+
+1. Se mueve en espacio de joints a la posición “safe”
+```py
+print "Safe point"
+safe_point = [2.35, -2, 0.69, -0.69, -1.57, 0]
+ur_group.set_joint_value_target(safe_point)
+rospy.loginfo( 'Planning movement' )
+plan = ur_group.plan()
+rospy.loginfo( 'Executing pl1an' )
+ur_group.execute( plan )
+raw_input('Pause')
+```
+2. Realiza un movimiento de approach en espacio cartesiano a la posición de cogida.
+```py
+for i in range (filas):
+    for j in range (columnas):
+
+        print "PICK"
+        pick_arriba = [0, 0, 1,-2.36, 1.57, 0]
+        ur_group.set_pose_target(pick_arriba)
+        plan = ur_group.plan()
+        ur_group.execute( plan )
+```
+3. Baja en Z para coger el objeto, y subir en Z de nuevo.
+```py
+
+        pick_abajo = [0, 0, 0.85,-2.36, 1.57, 0]
+        ur_group.set_pose_target(pick_abajo)
+        plan = ur_group.plan()
+        ur_group.execute( plan )
+
+        time.sleep(2)
+
+        ur_group.set_pose_target(pick_arriba)
+        plan = ur_group.plan()
+        ur_group.execute( plan )
+```
+4. Realiza un movimiento de approach en espacio cartesiano a la primera posición del grid
 ```py
 print "Place"
         place_arriba = [0.5+i*paso_horizontal, 0.7+j*paso_vertical, 1,-2.36, 1.57, 0]
         ur_group.set_pose_target(place_arriba)
         plan = ur_group.plan()
         ur_group.execute( plan )
-
+```
+5. Bajar en Z para dejar el objeto, y subir en Z de nuevo
+```py
         place_abajo = [0.5+i*paso_horizontal, 0.7+j*paso_vertical, 0.85,-2.36, 1.57, 0]
         ur_group.set_pose_target(place_abajo)
         plan = ur_group.plan()
@@ -173,7 +214,13 @@ print "Place"
         plan = ur_group.plan()
         ur_group.execute( plan )
 ```
-Las modificaciones se han llevado a cabo añadiendo 4 final, y no ha dado problemas. También se ha desplazado el origen un metro y ha dado error porque no lo ha alcanzado.
+6. Mover de nuevo a la posición de cogida (approach + bajar + subir)
+7. Dejar el objeto en la siguiente posición del grid
+8. Ir repitiendo el ciclo hasta completar todas las posiciones del grid
+
+Estos utlimos pasos se realizan a medida que se va incrementando el valor de los contadores y recorriendo todas las posiciones de la rejilla.
+
+Ademas, se han realizado modificaciones sobre los parametros iniciales. Primero se han llevado a cabo añadiendo 4 filas, y un paso horizontal de 0.08 no ha dado problemas. Sin embargo, también se ha desplazado el origen un metro  hacia la derecha (+x) y ha dado error porque el robot no ha alcanzado esta posiciòn por lo que se interrumpia el programa.
 
 ### Ejercicio 3
 
@@ -181,7 +228,7 @@ Las modificaciones se han llevado a cabo añadiendo 4 final, y no ha dado proble
 
 Se ha modificado el URDF para añadir un tercer obstáculo entre las dos mesas en forma de L. Este obstáculo tiene  las siguientes dimensiones: 0.4x0.4x1m y se encuentra en la posición x,y,z "0.5 0.5 1"
 
-Al planificar trayectorias, en algunos casos el robot ha hecho movimientos curisos debido a la dificultad de alcanzar la posición. En casos en los que directamente no ha podido conseguir generar la trayectoria, el programa ha dejado de ejecutarse.
+Al planificar trayectorias, en algunos casos el robot ha hecho movimientos curisos debido a la dificultad de alcanzar la posición, daba vueltas innecesarias para alcanzar los puntos. En casos en los que directamente no ha podido conseguir generar la trayectoria, el programa ha dejado de ejecutarse.
 
 ### Conclusiones
 
