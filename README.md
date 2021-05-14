@@ -45,7 +45,9 @@ Para realizar los ejercicios de pick&place, es necesario añadir una segunda mes
 
 
     ![](/Fotos/1.jpg)
-  
+  <p align="center">
+    <img src = /Fotos/1.jpg width="150">
+</p>
 
 
 Los valores de joint elegidos se definen a continuación en la tabla:
