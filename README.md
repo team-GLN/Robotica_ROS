@@ -37,7 +37,7 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 
 #### *El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE. En este caso, coge la pieza en una mesa y lo deposita en otra* 
 
-Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URDF. La configuración de las mesas que hemos considerado es con forma de L. La segunda mesa está situada a 0.5m del origen en X y las dimensiones de ambas son 1.5x0.5x0.74
+Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URDF. La configuración de las mesas que hemos considerado es con forma de L. La segunda mesa está situada a 0.5m del origen en X y las dimensiones de ambas son 1.5x0.5x0.74m.
 
 Además es necesario declarar una posición segura de inicio y final de programa en espacio de joints:
 
