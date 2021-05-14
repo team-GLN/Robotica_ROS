@@ -39,37 +39,7 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 
 Se genera un paquete para el ejercicio 1 ```catkin_create_pkg ejercicio_1 rospy```
 
-Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URDF.
-```
-<!-- MESA 2 -->
-<joint name="table_joint_2" type="fixed">
-<parent link="world"/>
-<child link="table_2"/>
-</joint>
-<link name="table_2">
-<visual>
-<origin xyz="0.5 1 0.37" rpy="0 0 0"/>
-<geometry>
-<box size="0.5 1.5 0.74"/>
-</geometry>
-</visual>
-<collision>
-<origin xyz="0.5 1 0.37" rpy="0 0 0"/>
-<geometry>
-<box size="0.5 1.5 0.74"/>
-</geometry>
-</collision>
-<inertial>
-<mass value="10"/>
-<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
-</inertial>
-</link>
-<gazebo reference="table_2">
-<material>Gazebo/DarkGrey</material>
-<mu1>2.0</mu1>
-<mu2>2.0</mu2>
-</gazebo>
-```
+Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URDF. La configuración de las mesas es con forma de L. La segunda mesa está situada a 0.5m del origen en X y las dimensiones de ambas son 1.5x0.5x0.74
 
 Además es necesario declarar una posición segura de inicio y final de programa en espacio de joints:
 
