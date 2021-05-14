@@ -39,7 +39,7 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 
 Se genera un paquete para el ejercicio 1 ```catkin_create_pkg ejercicio_1 rospy```
 
-Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URPF.
+Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URDF.
 ```
 <!-- MESA 2 -->
 <joint name="table_joint_2" type="fixed">
