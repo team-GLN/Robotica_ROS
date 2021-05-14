@@ -80,6 +80,10 @@ Al igual que se lanza el planificador MoveIt!, el cual sirve para planificar y e
 
  Y luego se lanza el nodo creado con el comando ```rosrun ejercicio_1 script_1.py```
  
+ <p align="center">
+    <img src = /Fotos/2.jpg width="350">
+</p>
+ 
 ### Ejercicio 2
 
 #### *En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid.*
