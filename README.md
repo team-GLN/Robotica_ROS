@@ -64,7 +64,7 @@ Como se menciona anteriomente, para realizar los ejercicios de pick & place se c
     <img src = /Fotos/1.jpg width="350">
 </p>
 
-Ademas se lanza el nodo rqt joint trajectory controller para mover las articulaciones (joints) del robot de forma independiente mediante el siguiente comando ```rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller --force-discover```, y encontrar la posición segura.
+Ademas se lanza el nodo "rqt joint trajectory controller" para mover las articulaciones (joints) del robot de forma independiente mediante el siguiente comando ```rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller --force-discover```, y encontrar la posición segura.
 
 Los valores en espacio de joints elegidos como posición segura se definen a continuación en la tabla:
 
@@ -136,8 +136,7 @@ Ademas, se utilizò RViz además de lanzar el visualizador es necesario lanzar t
  
 ### Ejercicio 2
 
-En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid.
-Para comenzar se ha tomado como base el ejercicio anterior y se realizan los mismos pasos de creaciòn de paquete, modificaciòn del URDF para una mesa mas grande
+En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid. Para comenzar se ha tomado como base el ejercicio anterior y se realizan los mismos pasos de creaciòn de paquete, utilizaciòn de gazebo, MoveIT, RViz y rqt joint trajectory controller, modificaciòn del URDF para una mesa mas grande, creaciòn de un script en python, etc.
 
 * Pose de inicio:
 * Posiciones de la bandeja:
@@ -153,6 +152,12 @@ Para comenzar se ha tomado como base el ejercicio anterior y se realizan los mis
 * Bajar en Z para dejar el objeto y subir en Z
 * Mover de nuevo a la posición de cogida
 
+```py
+filas = 3
+columnas = 3
+paso_horizontal = 0.1
+paso_vertical = 0.15
+```
 *Verificación de las posiciones
 
 ### Ejercicio 3
