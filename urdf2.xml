@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro"
+       name="ur5" >
+
+  <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
+
+  <!-- common stuff -->
+  <xacro:include filename="$(find ur_description)/urdf/common.gazebo.xacro" />
+
+  <!-- ur5 -->
+  <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+
+  <!-- arm -->
+  <xacro:ur5_robot prefix="" joint_limited="true"
+    shoulder_pan_lower_limit="${-pi}" shoulder_pan_upper_limit="${pi}"
+    shoulder_lift_lower_limit="${-pi}" shoulder_lift_upper_limit="${pi}"
+    elbow_joint_lower_limit="${-pi}" elbow_joint_upper_limit="${pi}"
+    wrist_1_lower_limit="${-pi}" wrist_1_upper_limit="${pi}"
+    wrist_2_lower_limit="${-pi}" wrist_2_upper_limit="${pi}"
+    wrist_3_lower_limit="${-pi}" wrist_3_upper_limit="${pi}"
+    transmission_hw_interface="$(arg transmission_hw_interface)"
+  />
+
+<!-- MESA 1 -->
+
+    <link name="world" />
+    <joint name="table_joint" type="fixed">
+        <parent link="world"/>
+        <child link="table"/>
+    </joint>
+
+    <link name="table">
+        <visual>
+            <origin xyz="0 0 0.37" rpy="0 0 0"/>
+            <geometry>
+                <box size="1.5 0.5 0.74"/>
+            </geometry>
+         </visual>
+        <collision>
+            <origin xyz="0 0 0.37" rpy="0 0 0"/>
+            <geometry>
+                <box size="1.5 0.5 0.74"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10"/>
+            <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="table">
+        <material>Gazebo/DarkGrey</material>
+        <mu1>2.0</mu1>
+        <mu2>2.0</mu2>
+    </gazebo>
+
+    <joint name="table_robot_joint" type="fixed">
+        <parent link="table" />
+        <child link = "base_link" />
+        <origin xyz="0.6 0.0 0.75" rpy="0.0 0.0 0.0" />
+    </joint>
+        
+ <!-- MESA 2 -->
+    <joint name="table_joint_2" type="fixed">
+        <parent link="world"/>
+        <child link="table_2"/>
+    </joint>
+
+    <link name="table_2">
+        <visual>
+            <origin xyz="0.5 1 0.37" rpy="0 0 0"/>
+            <geometry>
+                <box size="1 1.5 0.74"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.5 1 0.37" rpy="0 0 0"/>
+            <geometry>
+                <box size="1 1.5 0.74"/>
+            </geometry>
+        </collision>
+    <inertial>
+        <mass value="10"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    </link>
+
+    <gazebo reference="table_2">
+        <material>Gazebo/DarkGrey</material>
+        <mu1>2.0</mu1>
+        <mu2>2.0</mu2>
+    </gazebo>
