@@ -179,7 +179,7 @@ Las modificaciones se han llevado a cabo añadiendo 4 final, y no ha dado proble
 
 #### *MoveIt! tiene en cuenta los elementos de la escena para asegurar que las trayectorias que se generan no tienen ninguna colisión con los elementos de la escena.*
 
-Se ha modificado el URDF para añadir un tercer obstáculo entre las dos mesas en forma de L. Este obstáculo tiene  las siguientes dimensiones: 0.4x0.4x1m y se encuentra en la posición "0.5 0.5 1"
+Se ha modificado el URDF para añadir un tercer obstáculo entre las dos mesas en forma de L. Este obstáculo tiene  las siguientes dimensiones: 0.4x0.4x1m y se encuentra en la posición x,y,z "0.5 0.5 1"
 
 Al planificar trayectorias, en algunos casos el robot ha hecho movimientos curisos debido a la dificultad de alcanzar la posición. En casos en los que directamente no ha podido conseguir generar la trayectoria, el programa ha dejado de ejecutarse.
 
