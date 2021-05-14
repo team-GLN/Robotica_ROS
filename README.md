@@ -31,7 +31,7 @@ En primer lugar, se ha creado un nuevo workspace llamado *ros*. A continuación 
 
 Las acciones de ROS se programan mediante nodos, los cuales son la unidad ejecutable de ROS. Es el *Máster* el que supervisa la comunicación entre nodos. Es lo primero que se lanza y siempre tiene que estar lanzado (```roscore```). 
 
-Para visualizar estas modificaciones, se debe lanzar el simulador de UR Gazebo que el cálculo de geometrÍa, a traves del comando ```roslaunch ur_gazebo ur5.launch```. A su vez, cada vez que se ejecute un cambio se deben detener todos las terminales que se estén ejecuatando, y posteriormente compilar y refrescar la información nueva a través de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
+Para visualizar estas modificaciones, se debe lanzar el simulador de UR Gazebo que el cálculo de geometria, a traves del comando ```roslaunch ur_gazebo ur5.launch```. A su vez, cada vez que se ejecute un cambio se deben detener todos los terminales que se esten ejecuatando, y posteriormente compilar y refrescar la información nueva a traves de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
 
 Es necesario instalar una serie de complementos, librerias, APIs, etc. para realizar el desarrollo del ejercicio. Por un lado, se ha bajado una copia del codigo fuente de Ros de Universal Robots en el workspace para modificar el URDF.
 
@@ -128,7 +128,7 @@ También se lanza el planificador MoveIt!, el cual sirve para planificar y ejecu
 
 Ademas, se utilizò RViz además de lanzar el visualizador es necesario lanzar también el plugin ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```. En RViz podemos ver que las trayectorias pueden generar colisiones. Esto es debido a que la escena del RViz tiene suelo y la de MoveIt! no. Esto hace que haya que modificar la escena. 
 
- Y a continuación se lanza el nodo creado con el comando ```rosrun ejercicio_1 script_1.py```
+ Y por ùltimo, se lanza el nodo creado con el comando ```rosrun ejercicio_1 script_1.py```. La siguiente foto muestra la ejecuaciòn de todas las consolas lanzadas.
  
  <p align="center">
     <img src = /Fotos/2.jpg width="450">
@@ -136,7 +136,8 @@ Ademas, se utilizò RViz además de lanzar el visualizador es necesario lanzar t
  
 ### Ejercicio 2
 
-#### *En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid.*
+En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid.
+Para comenzar se ha tomado como base el ejercicio anterior y se realizan los mismos pasos de creaciòn de paquete, modificaciòn del URDF para una mesa mas grande
 
 * Pose de inicio:
 * Posiciones de la bandeja:
