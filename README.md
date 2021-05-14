@@ -141,8 +141,8 @@ En este ejercicio se va a simular que el robot coge una pieza de una posición y
 * Posiciones de la bandeja:
 * filas: 3
 * columnas: 3
-* Distancia horizontal de la rejilla: 0.05
-* Distancia vertical de la rejilla: 0.05
+* Distancia horizontal: 0.1
+* Distancia vertical: 0.15
 * Antes de comenzar el ciclo de pick&place, el robot debera ir a una posición 50mm por encima de la pose de inicio.
 * Posición segura de inicio y final de programa en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º]
 * Movimiento de approach en espacio cartesiano
