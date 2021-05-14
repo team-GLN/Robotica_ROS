@@ -114,7 +114,7 @@ for i in range (rep):
 
 #### *MoveIt! tiene en cuenta los elementos de la escena para asegurar que las trayectorias que se generan no tienen ninguna colisión con los elementos de la escena. Cogiendo como punto inicial del ejercicio anterior [0º, -45º, -90º, -135º, 90º, 0º], modifica la URDF para añadir obstáculos.*
 
-Se ha añadido un tercer obstáculo entre las dos mesas desplazando la segunda mesa. De tal manera que al robot le resulte más complicado alcanzar la segunda mesa. 
+Se ha añadido un tercer obstáculo entre las dos mesas modificando el URDF una vez más, de tal manera que al robot le resulte más complicado alcanzar la segunda mesa. Como conclusión 
 
 ### Conclusiones
 
