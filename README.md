@@ -25,7 +25,7 @@ Se van a analizar y programar diferentes ejercicios de situaciones típicas que 
 
 ### Ejercicio 1
 
-Primeramente se ha creado un nuevo workspace *ros*. A continuación se crea un paquete *src.
+Primeramente se ha creado un nuevo workspace *ros*. A continuación se crea un paquete *src. Se genera un paquete para el ejercicio 1 ```catkin_create_pkg ejercicio_1 rospy```
 
 Es necesario instalar el simulador de UR Gazebo para hacer el cálculo de geometria a traves del paquete de ROS ```sudo apt-get install ros-kinetic-universal-robot```. A la hora de hacer los ejercicios, se lanza este simulador con ```roslaunch ur_gazebo ur5.launch``` así como el planificador MoveIt! (es en un conjunto de paquetes); el cual sirve para planificar y ejecutar trayectorias en espacio cartesiano con ```roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true```. Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario tener instalado el paquete *moveit_commander* porque ofrece una interfaz de Python. El siguiente paso a seguir es generar un nuevo paquete para obtener el script, *rospy*.
 
@@ -36,8 +36,6 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 
 
 #### *El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE. En este caso, coge la pieza en una mesa y lo deposita en otra* 
-
-Se genera un paquete para el ejercicio 1 ```catkin_create_pkg ejercicio_1 rospy```
 
 Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URDF. La configuración de las mesas que hemos considerado es con forma de L. La segunda mesa está situada a 0.5m del origen en X y las dimensiones de ambas son 1.5x0.5x0.74
 
