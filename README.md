@@ -114,8 +114,36 @@ for i in range (rep):
 
 #### *MoveIt! tiene en cuenta los elementos de la escena para asegurar que las trayectorias que se generan no tienen ninguna colisión con los elementos de la escena. Cogiendo como punto inicial del ejercicio anterior [0º, -45º, -90º, -135º, 90º, 0º], modifica la URDF para añadir obstáculos.*
 
-Se ha añadido un tercer obstáculo entre las dos mesas modificando el URDF una vez más, de tal manera que al robot le resulte más complicado alcanzar la segunda mesa. Como conclusión 
-
+Se ha añadido un tercer obstáculo entre las dos mesas modificando el URDF una vez más, de tal manera que al robot le resulte más complicado alcanzar la segunda mesa. Lo que se observa es que dependiendo de la trayectoria planificada, en los casos en los que le cuesta alcanzar la posición hace movimientos "curiosos" y en los que no puede completar el movimiento, se interrumpe el programa.
+ <!-- MESA 3 -->
+<joint name="table_joint_2" type="fixed">
+<parent link="world"/>
+<child link="table_3"/>
+</joint>
+<link name="table_3">
+<visual>
+<origin xyz="0.6 1 0.37" rpy="0 0 0"/>
+<geometry>
+<box size="0.2 0.2 0.80"/>
+</geometry>
+</visual>
+<collision>
+<origin xyz="0.5 1 0.37" rpy="0 0 0"/>
+<geometry>
+<box size="0.5 1.5 0.74"/>
+</geometry>
+</collision>
+<inertial>
+<mass value="10"/>
+<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+</inertial>
+</link>
+<gazebo reference="table_2">
+<material>Gazebo/DarkGrey</material>
+<mu1>2.0</mu1>
+<mu2>2.0</mu2>
+</gazebo>
+ 
 ### Conclusiones
 
 Al ser un entorno de trabajo abstracto para nosotras, nos hemos encontrado con varios problemas: nos ha dado problemas la máquina virtual. Además nos ha llevado mucho tiempo solventar que aparezca la segunda mesa. La razón principal ha sido que no se detenian todos los terminales activos para modificar el URDF.
