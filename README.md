@@ -39,7 +39,7 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 
 * Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URPF.
 
-*Es necesario declarar una posición segura de inicio y final de programa en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º] *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
+* Es necesario declarar una posición segura de inicio y final de programa en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º] *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
 
 * El ciclo pick&place en posiciones cartersianas que se propone es el siguiente: 
 
