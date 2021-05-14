@@ -69,7 +69,15 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 </gazebo>
 ```
 
-* Es necesario declarar una posición segura de inicio y final de programa en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º] *Safe Point* en equivalente en radianes:[-pi/4, -pi/2, 0,-3*pi/4, pi/2, 0]
+* Es necesario declarar una posición segura de inicio y final de programa en espacio de joints:
+elbow_joint 0.69
+shoulder_lift_join -2
+shoulder_pan_joint 2,35
+wrist_1_joint -0.69
+wrist_2_joint -1.57
+wrist_3 joint 0.5
+
+
 
 * El ciclo pick&place en posiciones cartersianas que se propone es el siguiente: 
 * 
