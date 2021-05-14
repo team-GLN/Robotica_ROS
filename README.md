@@ -75,7 +75,8 @@ El ciclo pick&place en posiciones cartersianas que se propone es el que se ve a 
 * Espera 2 segundos.
 
 
-```rep=5
+```
+rep=5
 
 for i in range (rep):
 	pick_arriba = [0, 0, 1,-2.36, 1.57, 0]
