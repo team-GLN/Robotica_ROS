@@ -29,11 +29,7 @@ El ejercicio a programar consiste en la aplicación roboticá común de PICK & P
 
 En primer lugar, se ha creado un nuevo workspace llamado *ros*. A continuación se crea un paquete para el ejercicio 1 con el comando  ```catkin_create_pkg ejercicio_1 rospy``` dentro de la carpeta *src*.
 
-Las acciones en ROS se programan mediante nodos, la cual es la unidad ejecutable de ROS. Es el *Máster* el que supervisa la comunicación entre nodos. Es lo primero que se lanza y siempre tiene que estar lanzado (```roscore```). 
-
-A su vez, es necesario instalar una serie de complementos, librerias, APIs, etc. para realizar el desarrollo del ejercicio. Por un lado, se ha bajado una copia del codigo fuente de Ros de Universal Robots para modificar el URDF.
-
-Para ello, se ha modificado la parte *world_joint* del URDF para añadir dos mesas, una sobre la que esta el robot y realiza el pick y otra en perpendicular (en forma de L) donde se realiza el place. 
+Las acciones de ROS se programan mediante nodos, los cuales son la unidad ejecutable de ROS. Es el *Máster* el que supervisa la comunicación entre nodos. Es lo primero que se lanza y siempre tiene que estar lanzado (```roscore```). 
 
 Para visualizar estas modificaciones, se debe lanzar el simulador de UR Gazebo que el cálculo de geometria, a traves del comando ```roslaunch ur_gazebo ur5.launch```
 
@@ -43,7 +39,9 @@ Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaj
 
 Como planificador de trayectorias también se puede utilizar el visualizador de datos de Ros, RViz. Para que RViz interaccione con MoveIt! además de lanzar el visualizador es necesario lanzar también el plugin ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```. En RViz podemos ver que las trayectorias pueden generar colisiones. Esto es debido a que la escena del RViz tiene suelo y la de MoveIt! no. Esto hace que haya que modificar la escena. Es necesario modificar la última parte *world_joint* del URDF (formato de lenguaje) para añadir una mesa. Sin embargo, durante esta fase de modificaciones, hay que detener todos los terminales y posteriormente activarlos a traves de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
 
+Es necesario instalar una serie de complementos, librerias, APIs, etc. para realizar el desarrollo del ejercicio. Por un lado, se ha bajado una copia del codigo fuente de Ros de Universal Robots para modificar el URDF.
 
+Para ello, se ha modificado la parte *world_joint* del URDF para añadir dos mesas, una sobre la que esta el robot y realiza el pick y otra en perpendicular (en forma de L) donde se realiza el place. 
 Como se menciona anteriomente, para realizar los ejercicios de pick & place se configuraron dos mesas en forma de L,  para simular coger objetos y depositarlos. La primera mesa está situada en el origen y sus dimensiones son 1.5x0.5x0.74m. La segunda mesa está situada a 0.5m en X y 1m en Y y sus dimensiones son 0.5x1.5x0.74m.
     
   <p align="center">
@@ -74,16 +72,18 @@ Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaj
 * Espera 2 segundos.
 * Vuelve a subir a la posición a Place arriba.
 
-Este ciclo pick & place se alcanzas las posiciones en espacios cartersianos definidos anteriormente. Ademas se a incluido dentro de un ciclo ```for``` donde se realizan N repeticiones, segun el valor que se le asigne a dicha variable (en este caso de 5).
+Este ciclo pick & place se alcanzas las posiciones en espacios cartersianos definidos anteriormente. Ademas se a incluido dentro de un ciclo ```for``` donde se realizan N repeticiones, segun el valor que se le asigne a dicha variable (en este caso de 5). 
 
-Se aclara que, en este script se ha definido la posiciòn segura en joints mediante el siguiente vector ```safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]```. Esta posición segura es alcanzada  al inicio y final de programa en espacio de joints.
+Se ha importado la libreria Time y se define el tiempo de espera mediante la variable: time.sleep. En este caso se le ha dado un valor de 2.
 
-Para que el script Python sea ejecutable, se les dan permisos de ejecuciòn mediante el comando   ```chmod +x script_1.py ```.
+Se aclara que, en este script se ha definido la posición segura en joints mediante el siguiente vector ```safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]```. Esta posición segura es alcanzada  al inicio y al final del programa en espacio de joints.
+
+Para que el script de Python sea ejecutable, se dan permisos de ejecuciòn mediante el comando   ```chmod +x script_1.py ```.
 Nuevamente se compila y refresca la información nueva a traves de ```catkin build``` y ```source devel/setup.bash```. 
 
-Al igual que se lanza el planificador MoveIt!, el cual sirve para planificar y ejecutar trayectorias en espacio cartesiano con ```roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true```. 
+También se lanza el planificador MoveIt!, el cual sirve para planificar y ejecutar trayectorias en espacio cartesiano con ```roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true```. 
 
- Y luego se lanza el nodo creado con el comando ```rosrun ejercicio_1 script_1.py```
+ Y a continuación se lanza el nodo creado con el comando ```rosrun ejercicio_1 script_1.py```
  
  <p align="center">
     <img src = /Fotos/2.jpg width="450">
