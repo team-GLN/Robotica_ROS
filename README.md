@@ -72,13 +72,14 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 * Es necesario declarar una posición segura de inicio y final de programa en espacio de joints:
 
 
-
-| elbow_joint               | 0.69     |      
-| shoulder_lift_join        | -2       |                                        
-| shoulder_pan_joint        | 2.35     |                                   
-| wrist_1_joint             | -0.69    |                               
-| wrist_2_joint             | -1.57    | 
-| wrist_3 joint             | 0.5      |
+| ID Acción         | Acción       | 
+| :----------------:|:------------:|
+| elbow_joint       | 0.69         |      
+| shoulder_lift_join| -2           |                                        
+| shoulder_pan_joint| 2.35         |                                   
+| wrist_1_joint     | -0.69        |                               
+| wrist_2_joint     | -1.57        | 
+| wrist_3 joint     | 0.5          |
 
 
 
