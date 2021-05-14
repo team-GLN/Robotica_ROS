@@ -53,7 +53,8 @@ Los valores de joint elegidos se definen a continuación en la tabla:
 | wrist_3 joint     | 0.5          |
 
 Además es necesario declarar una posición segura de inicio y final de programa en espacio de joints:
-safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]
+
+* safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]
 
 
 * El ciclo pick&place en posiciones cartersianas que se propone es el siguiente: 
