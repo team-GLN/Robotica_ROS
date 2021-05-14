@@ -115,7 +115,7 @@ for i in range (rep):
 #### *MoveIt! tiene en cuenta los elementos de la escena para asegurar que las trayectorias que se generan no tienen ninguna colisión con los elementos de la escena. Cogiendo como punto inicial del ejercicio anterior [0º, -45º, -90º, -135º, 90º, 0º], modifica la URDF para añadir obstáculos.*
 
 Se ha añadido un tercer obstáculo entre las dos mesas modificando el URDF una vez más, de tal manera que al robot le resulte más complicado alcanzar la segunda mesa. Lo que se observa es que dependiendo de la trayectoria planificada, en los casos en los que le cuesta alcanzar la posición hace movimientos "curiosos" y en los que no puede completar el movimiento, se interrumpe el programa.
- <!-- MESA 3 -->
+```<!-- MESA 3 -->
 <joint name="table_joint_2" type="fixed">
 <parent link="world"/>
 <child link="table_3"/>
@@ -142,7 +142,8 @@ Se ha añadido un tercer obstáculo entre las dos mesas modificando el URDF una 
 <material>Gazebo/DarkGrey</material>
 <mu1>2.0</mu1>
 <mu2>2.0</mu2>
-</gazebo>
+</gazebo> 
+```
  
 ### Conclusiones
 
