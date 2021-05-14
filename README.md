@@ -153,7 +153,7 @@ columnas = 3
 paso_horizontal = 0.1
 paso_vertical = 0.15
 ```
-Tambien, se han agregado dos ciclos ```for``` para recorrer la rejilla, el primero da el paso por las columnas, manteniendo la fila constante, y despues se incrementa el contador para pasar a la siguiente fila. Ademas de crear los dos contadores ```i``` y ```j``` que controlan el recorrido y se incrementan en cada paso.
+Tambien, se han agregado dos ciclos ```for``` para recorrer la rejilla, el primero da el paso por las columnas, manteniendo la fila constante, y después se incrementa el contador para pasar a la siguiente fila. Ademas de crear los dos contadores ```i``` y ```j``` que controlan el recorrido y se incrementan en cada paso.
 
 ```py
 print "Place"
@@ -173,6 +173,7 @@ print "Place"
         plan = ur_group.plan()
         ur_group.execute( plan )
 ```
+Las modificaciones se han llevado a cabo añadiendo 4 final, y no ha dado problemas. También se ha desplazado el origen un metro y ha dado error porque no lo ha alcanzado.
 
 ### Ejercicio 3
 
@@ -184,4 +185,4 @@ Al planificar trayectorias, en algunos casos el robot ha hecho movimientos curis
 
 ### Conclusiones
 
-Al ser un entorno de trabajo abstracto para nosotras, nos hemos encontrado con varios problemas: nos ha dado problemas la máquina virtual. Además nos ha llevado mucho tiempo solventar que aparezca la segunda mesa. La razón principal ha sido que no se detenian todos los terminales activos para modificar el URDF.
+Al ser un entorno de trabajo abstracto para nosotras, nos hemos encontrado con varios problemas: nos ha dado problemas la máquina virtual. Además nos ha llevado mucho tiempo solventar que aparezca la segunda mesa. La razón principal ha sido que no se detenían todos los terminales activos para modificar el URDF.
