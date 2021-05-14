@@ -1,6 +1,6 @@
-# Proyecto Final del curso de Robotica Industrial Aplicada
+# Proyecto Final de Robótica Industrial Aplicada
 ## ROS
-*Master Universitario en Digital Manufacturing*
+*Máster Universitario en Digital Manufacturing*
 
 Desarrollado por:
 * Nekane Berasategui
