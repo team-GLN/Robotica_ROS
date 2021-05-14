@@ -41,8 +41,7 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 
 Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URDF. La configuración de las mesas que hemos considerado es con forma de L. La segunda mesa está situada a 0.5m del origen en X y las dimensiones de ambas son 1.5x0.5x0.74m.
 
-Además es necesario declarar una posición segura de inicio y final de programa en espacio de joints:
-
+Los valores de joint elegidos se definen a continuación en la tabla:
 
 | Joints            | Valores      | 
 | :----------------:|:------------:|
@@ -53,9 +52,8 @@ Además es necesario declarar una posición segura de inicio y final de programa
 | wrist_2_joint     | -1.57        | 
 | wrist_3 joint     | 0.5          |
 
-
-
-
+Además es necesario declarar una posición segura de inicio y final de programa en espacio de joints:
+safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]
 
 
 * El ciclo pick&place en posiciones cartersianas que se propone es el siguiente: 
