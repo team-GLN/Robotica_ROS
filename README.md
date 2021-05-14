@@ -44,7 +44,7 @@ Es necesario modificar la última parte *world_joint* del URDF (formato de lengu
 Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URDF. La configuración de las mesas que hemos considerado es con forma de L. La segunda mesa está situada a 0.5m del origen en X y las dimensiones de ambas son 1.5x0.5x0.74m.
 
 
-    ![](/fotos/1.jpg)
+    ![](/Fotos/1.jpg)
   
 
 
