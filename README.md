@@ -146,14 +146,14 @@ Se ha tomado como base las posiciones iniciales del ejercicio anterior
 * Posicion inicial de la bandeja (Place): [0.5, 0.7, 1, -2.36, 1.57, 0]
 * Posición segura de inicio y final de programa en espacio de joints: safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]
 
-Tambien, se han definido los parametros de filas, columnas, Distancia horizontal y Distancia vertical como variables del codigo en Python para facilitar su uso en caso de requerir modificaciòn en el valor
+Se han definido los parametros de filas, columnas, Distancia horizontal y Distancia vertical como variables del codigo en Python para facilitar su uso en caso de requerir modificaciòn en el valor
 ```py
 filas = 3
 columnas = 3
 paso_horizontal = 0.1
 paso_vertical = 0.15
 ```
-Tambien, se han agregado dos ciclos ```for``` para recorrer la rejilla, el primero da el paso por las columnas, manteniendo la fila constante, y después se incrementa el contador para pasar a la siguiente fila. Ademas de crear los dos contadores ```i``` y ```j``` que controlan el recorrido y se incrementan en cada paso.
+También, se han agregado dos ciclos ```for``` para recorrer la rejilla, el primero da el paso por las columnas, manteniendo la fila constante, y después se incrementa el contador para pasar a la siguiente fila. Además de crear los dos contadores ```i``` y ```j``` que controlan el recorrido y se incrementan en cada paso.
 
 ```py
 print "Place"
