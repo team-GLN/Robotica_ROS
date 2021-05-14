@@ -76,6 +76,8 @@ Los valores en espacio de joints elegidos como posición segura se definen a con
 | wrist_2_joint     | -1.57        | 
 | wrist_3 joint     | 0.50         |
 
+safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]
+
 Para la comunicación entre ROS y MoveIt que se llevará a cabo mediante lenguaje Python, es necesario importar la libreria de *moveit_commander*. 
 
 ```py
@@ -137,19 +139,13 @@ Además, se utiliza RViz de lanzar el visualizador es necesario lanzar también 
 
 En este ejercicio se va a simular que el robot coge una pieza de una posición y la deja en otra posición del grid. Para comenzar se ha tomado como base el ejercicio anterior y se realizan los mismos pasos de creaciòn de paquete, utilizaciòn de gazebo, MoveIT, RViz y rqt joint trajectory controller, modificaciòn del URDF para una mesa mas grande, creaciòn de un script en python, etc.
 
-* Pose de inicio:
+* Pose de inicio (Pose pick del ejercicio 1): [0, 0, 1, -2.36, 1.57, 0]
 * Posiciones de la bandeja:
 * filas: 3
 * columnas: 3
 * Distancia horizontal: 0.1
 * Distancia vertical: 0.15
-* Antes de comenzar el ciclo de pick&place, el robot debera ir a una posición 50mm por encima de la pose de inicio.
-* Posición segura de inicio y final de programa en espacio de joints: [-45º, -90º, 0º -135º, 90º, 0º]
-* Movimiento de approach en espacio cartesiano
-* Bajar en Z para coger el objeto y subir en Z
-* Movimiento de approach a la primera posicion del grid
-* Bajar en Z para dejar el objeto y subir en Z
-* Mover de nuevo a la posición de cogida
+* Posición segura de inicio y final de programa en espacio de joints: safe_pose = [2.35, -2, 0.69, -0.69, -1.57, 0]
 
 ```py
 filas = 3
@@ -157,7 +153,6 @@ columnas = 3
 paso_horizontal = 0.1
 paso_vertical = 0.15
 ```
-*Verificación de las posiciones
 
 ### Ejercicio 3
 
