@@ -220,7 +220,7 @@ print "Place"
 
 Estos utlimos pasos se realizan a medida que se va incrementando el valor de los contadores y recorriendo todas las posiciones de la rejilla.
 
-Ademas, se han realizado modificaciones sobre los parametros iniciales. Primero se han llevado a cabo añadiendo 4 filas, y un paso horizontal de 0.08 no ha dado problemas. Sin embargo, también se ha desplazado el origen un metro  hacia la derecha (+x) y ha dado error porque el robot no ha alcanzado esta posiciòn por lo que se interrumpia el programa.
+Ademas, se han realizado modificaciones sobre los parametros iniciales. Primero se han llevado a cabo añadiendo 4 filas, y un paso horizontal de 0.08 no ha dado problemas. Sin embargo, también se ha desplazado el origen un metro  hacia la derecha (+x) y ha dado error porque el robot no ha alcanzado esta posición por lo que se ha interrumpido el programa.
 
 ### Ejercicio 3
 
