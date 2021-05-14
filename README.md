@@ -37,7 +37,9 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 
 #### *El ejercicio a programar consiste en la aplicación roboticá común de PICK&PLACE. En este caso, coge la pieza en una mesa y lo deposita en otra* 
 
-* Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URPF.
+Se genera un paquete para el ejercicio 1 ```catkin_create_pkg ejercicio_1 rospy```
+
+Para realizar los ejercicios de pick&place, es necesario añadir una segunda mesa para simular coger objetos y depositarlos. Para ello hay que modificar el URPF.
 ```
 <!-- MESA 2 -->
 <joint name="table_joint_2" type="fixed">
@@ -69,7 +71,7 @@ Como planificador de trayectorias también se puede utilizar el visualizador de 
 </gazebo>
 ```
 
-* Es necesario declarar una posición segura de inicio y final de programa en espacio de joints:
+Además necesario declarar una posición segura de inicio y final de programa en espacio de joints:
 
 
 | Joints            | Valores      | 
