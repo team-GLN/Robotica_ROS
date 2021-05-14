@@ -31,7 +31,7 @@ En primer lugar, se ha creado un nuevo workspace llamado *ros*. A continuación 
 
 Las acciones de ROS se programan mediante nodos, los cuales son la unidad ejecutable de ROS. Es el *Máster* el que supervisa la comunicación entre nodos. Es lo primero que se lanza y siempre tiene que estar lanzado (```roscore```). 
 
-Para visualizar estas modificaciones, se debe lanzar el simulador de UR Gazebo que el cálculo de geometria, a traves del comando ```roslaunch ur_gazebo ur5.launch```. A su vez, cada vez que se ejecute un cambio se deben detener todos los terminales que se esten ejecuatando, y posteriormente compilar y refrescar la información nueva a traves de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
+Para visualizar estas modificaciones, se debe lanzar el simulador de UR Gazebo que el cálculo de geometría, a traves del comando ```roslaunch ur_gazebo ur5.launch```. A su vez, cada vez que se ejecuta un cambio se deben detener todas las terminales que se esten ejecuatando, y posteriormente compilar y refrescar la información nueva a traves de ```catkin build``` y a continuación ```source devel/setup.bash``` . 
 
 Es necesario instalar una serie de complementos, librerias, APIs, etc. para realizar el desarrollo del ejercicio. Por un lado, se ha bajado una copia del codigo fuente de Ros de Universal Robots en el workspace para modificar el URDF.
 
